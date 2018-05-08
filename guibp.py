@@ -8,6 +8,10 @@
 
 from PyQt4 import QtCore, QtGui
 
+
+import serial
+ser = serial.Serial('/dev/ttyUSB0', 9600)
+
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
 except AttributeError:
@@ -66,16 +70,21 @@ class Ui_MainWindow(object):
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def read(self):
-            print(self.txtResult.text())
-            print(self.horizontalSlider.value())
-    def close(self):
-            print(self.txtResult.text())
-            print(self.horizontalSlider.value())
-    def open(self):
-            print(self.txtResult.text())
-            print(self.horizontalSlider.value())
+        data = ser.readline()
+        if data:
+           print(data)
+        self.txtsys.setText(_translate("MainWindow", "65", None))
+        self.txtDias.setText(_translate("MainWindow", "25", None))
 
-    print("end fn")
+    def close(self):
+            ser.close()
+            print("closed")
+
+    def open(self):
+            ser.open()
+            print("opened")
+
+
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow", None))
