@@ -73,6 +73,8 @@ class Ui_MainWindow(object):
         data = ser.readline()
         if data:
            print(data)
+        datos = list(data)
+        print(datos)
         self.txtsys.setText(_translate("MainWindow", "65", None))
         self.txtDias.setText(_translate("MainWindow", "25", None))
 
