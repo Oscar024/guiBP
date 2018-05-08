@@ -75,6 +75,9 @@ class Ui_MainWindow(object):
            print(data)
         datos = list(data)
         print(datos)
+        siastolica = datos[1]+datos[2]+datos[3]
+        diastolica = datos[6]+ datos[7]+datos[8]
+        pulso = datos[11]+datos[12]+datos[13]
         self.txtsys.setText(_translate("MainWindow", "65", None))
         self.txtDias.setText(_translate("MainWindow", "25", None))
 
