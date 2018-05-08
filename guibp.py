@@ -9,7 +9,7 @@
 from PyQt4 import QtCore, QtGui
 
 import serial
-ser = serial.Serial('/dev/ttyUSB0', 9600)
+ser = serial.Serial('/dev/ttyUSB1', 9600)
 
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
@@ -78,8 +78,10 @@ class Ui_MainWindow(object):
             if data:
                 print(data)
             datos = list(data)
+            datos = bytes(datos).decode('utf8')
             print(datos)
             siastolica = datos[1] + datos[2] + datos[3]
+            temp = str(datos[3])
             diastolica = datos[6] + datos[7] + datos[8]
             pulso = datos[11] + datos[12] + datos[13]
             self.txtsys.setText(_translate("MainWindow", siastolica, None))
