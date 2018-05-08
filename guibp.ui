@@ -17,8 +17,8 @@
    <widget class="QPushButton" name="btnOpen">
     <property name="geometry">
      <rect>
-      <x>460</x>
-      <y>410</y>
+      <x>290</x>
+      <y>400</y>
       <width>99</width>
       <height>27</height>
      </rect>
@@ -30,8 +30,8 @@
    <widget class="QLineEdit" name="txtsys">
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>260</y>
+      <x>300</x>
+      <y>50</y>
       <width>113</width>
       <height>27</height>
      </rect>
@@ -43,8 +43,8 @@
    <widget class="QPushButton" name="btnClose">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>410</y>
+      <x>140</x>
+      <y>400</y>
       <width>99</width>
       <height>27</height>
      </rect>
@@ -56,8 +56,8 @@
    <widget class="QLineEdit" name="txtDias">
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>190</y>
+      <x>300</x>
+      <y>80</y>
       <width>113</width>
       <height>27</height>
      </rect>
@@ -69,8 +69,8 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>200</y>
+      <x>190</x>
+      <y>90</y>
       <width>68</width>
       <height>17</height>
      </rect>
@@ -82,8 +82,8 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>260</y>
+      <x>190</x>
+      <y>50</y>
       <width>68</width>
       <height>17</height>
      </rect>
@@ -95,14 +95,40 @@
    <widget class="QPushButton" name="btnRead">
     <property name="geometry">
      <rect>
-      <x>370</x>
-      <y>340</y>
+      <x>290</x>
+      <y>180</y>
       <width>99</width>
       <height>27</height>
      </rect>
     </property>
     <property name="text">
      <string>Leer</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="txtPulso">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>120</y>
+      <width>113</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>65</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblpulso">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>120</y>
+      <width>68</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Pulse</string>
     </property>
    </widget>
   </widget>
@@ -181,6 +207,22 @@
     <hint type="destinationlabel">
      <x>292</x>
      <y>219</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnRead</sender>
+   <signal>clicked()</signal>
+   <receiver>txtPulso</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>431</x>
+     <y>366</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>370</x>
+     <y>180</y>
     </hint>
    </hints>
   </connection>
