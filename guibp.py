@@ -9,7 +9,16 @@
 from PyQt4 import QtCore, QtGui
 
 import serial
-ser = serial.Serial('/dev/ttyUSB1', 9600)
+
+import serial.tools.list_ports
+
+
+ports = list(serial.tools.list_ports.comports())
+for p in ports:
+    print(p)
+device = p.device
+
+ser = serial.Serial(device, 9600)
 
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
